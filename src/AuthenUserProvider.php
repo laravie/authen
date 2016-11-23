@@ -22,27 +22,16 @@ class AuthenUserProvider extends EloquentUserProvider
             return parent::retrieveByCredentials($credentials);
         }
 
+        $identifier = $credentials['identifier'];
+        unset($credentials['identifier']);
+
         // First we will add each credential element to the query as a where clause.
         // Then we can execute the query and, if we found a user, return it in a
         // Eloquent User "model" that will be utilized by the Guard instances.
 
-        return $this->resolveCredentialsByIdentifiers($this->createModel()->newQuery(), $credentials);
-    }
-
-    /**
-     * Resolve credentials by multiple identifiers.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  array  $credentials
-     *
-     * @return \Illuminate\Contracts\Auth\Authenticatable|null
-     */
-    protected function resolveCredentialsByIdentifiers(Builder $query, array $credentials)
-    {
-        $identifier = $credentials['identifier'];
-        unset($credentials['identifier']);
-
-        $query->findByIdentifiers($identifier);
+        $query = $this->createModel()
+                    ->newQuery()
+                    ->findByIdentifiers($identifier);
 
         foreach ($credentials as $key => $value) {
             if (! Str::contains($key, 'password')) {
