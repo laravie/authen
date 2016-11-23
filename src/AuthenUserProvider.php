@@ -42,13 +42,7 @@ class AuthenUserProvider extends EloquentUserProvider
         $identifier = $credentials['identifier'];
         unset($credentials['identifier']);
 
-        $names = $query->getModel()->getAuthIdentifiersName();
-
-        $query->where(function ($query) use ($names, $identifier) {
-            foreach ($names as $name) {
-                $query->orWhere($name, '=', $identifier);
-            }
-        });
+        $query->findByIdentifiers($identifier);
 
         foreach ($credentials as $key => $value) {
             if (! Str::contains($key, 'password')) {
