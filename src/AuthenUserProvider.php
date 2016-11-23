@@ -5,9 +5,9 @@ namespace Laravie\Authen;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Builder;
 use Laravie\Authen\Contracts\Identifiers;
-use Illuminate\Auth\EloquentUserProvider as Provider;
+use Illuminate\Auth\EloquentUserProvider;
 
-class EloquentUserProvider extends Provider
+class AuthenUserProvider extends EloquentUserProvider
 {
     /**
      * Retrieve a user by the given credentials.
