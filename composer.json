@@ -1,0 +1,22 @@
+{
+    "name": "laravie/authen",
+    "description": "Authentication Provider for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mior Muhammad Zaki",
+            "email": "crynobone@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Laravie\\Authen\\": "src/"
+        }
+    },
+    "require": {
+        "illuminate/auth": "^5.2",
+        "illuminate/database": "^5.2"
+    },
+    "minimum-stability": "dev"
+}
