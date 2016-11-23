@@ -1,6 +1,6 @@
 {
     "name": "laravie/authen",
-    "description": "Authentication Provider for Laravel",
+    "description": "User Authentication Identifiers for Laravel",
     "type": "library",
     "license": "MIT",
     "authors": [
