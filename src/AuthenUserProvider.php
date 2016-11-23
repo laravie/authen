@@ -18,22 +18,15 @@ class AuthenUserProvider extends EloquentUserProvider
      */
     public function retrieveByCredentials(array $credentials)
     {
-        if (! (isset($credentials['identifier']) && $this->model instanceof Identifiers)) {
+        if (! isset($credentials['identifier'])) {
             return parent::retrieveByCredentials($credentials);
         }
 
         // First we will add each credential element to the query as a where clause.
         // Then we can execute the query and, if we found a user, return it in a
         // Eloquent User "model" that will be utilized by the Guard instances.
-        $query = $this->createModel()->newQuery();
 
-        foreach ($credentials as $key => $value) {
-            if (! Str::contains($key, 'password')) {
-                $query->where($key, $value);
-            }
-        }
-
-        return $this->resolveCredentialsByIdentifiers($query, $credentials);
+        return $this->resolveCredentialsByIdentifiers($this->createModel()->newQuery(), $credentials);
     }
 
     /**
@@ -49,13 +42,19 @@ class AuthenUserProvider extends EloquentUserProvider
         $identifier = $credentials['identifier'];
         unset($credentials['identifier']);
 
-        $names = $this->model->getAuthIdentifiersName();
+        $names = $query->getModel()->getAuthIdentifiersName();
 
         $query->where(function ($query) use ($names, $identifier) {
             foreach ($names as $name) {
                 $query->orWhere($name, '=', $identifier);
             }
         });
+
+        foreach ($credentials as $key => $value) {
+            if (! Str::contains($key, 'password')) {
+                $query->where($key, $value);
+            }
+        }
 
         return $query->first();
     }
