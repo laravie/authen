@@ -15,8 +15,14 @@
         }
     },
     "require": {
+        "php": ">=5.6.0",
         "illuminate/auth": "^5.2",
         "illuminate/database": "^5.2"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
     },
     "minimum-stability": "dev"
 }
