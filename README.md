@@ -95,7 +95,7 @@ With this setup, you can now check either `email`, `username` or `phone_number` 
 
 Lastly, you need to update the config `config/auth.php`:
 
-```
+```php
 <?php
 
 return [
