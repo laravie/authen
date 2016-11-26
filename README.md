@@ -31,6 +31,8 @@ Above installation can also be simplify by using the following command:
 
 ## Usages
 
+### Service Provider
+
 First you can attach the auth provider on `App\Providers\AuthServiceProvider`:
 
 ```php
@@ -59,6 +61,8 @@ class AuthServiceProvider extends ServiceProvider
 }
 ```
 
+### User Model
+
 Secondly, you need to update the related `App\User` (or the eloquent model mapped for auth).
 
 ```php
@@ -86,6 +90,28 @@ class User extends Authenticatable
 ```
 
 With this setup, you can now check either `email`, `username` or `phone_number` during authentication.
+
+### Configuration
+
+Lastly, you need to update the config `config/auth.php`:
+
+```
+<?php
+
+return [
+
+    // ...
+
+    'providers' => [
+        'users' => [
+            'driver' => 'authen',
+            'model'  => App\User::class,
+        ],
+    ],
+
+    // ...
+];
+```
 
 ### Examples
 
