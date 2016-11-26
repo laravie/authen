@@ -38,13 +38,13 @@ First you can attach the auth provider on `App\Providers\AuthServiceProvider`:
 
 namespace App\Providers;
 
-use Laravie\Authen\BootAuthenProvider;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Laravie\Authen\BootAuthenProvider;
 
 class AuthServiceProvider extends ServiceProvider
 {
     use BootAuthenProvider;
-    
+
     /**
      * Register any authentication / authorization services.
      *
@@ -57,3 +57,48 @@ class AuthServiceProvider extends ServiceProvider
         $this->bootAuthenProvider();
     }
 }
+```
+
+Secondly, you need to update the related `App\User` (or the eloquent model mapped for auth).
+
+```php
+<?php
+namespace App;
+
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravie\Authen\AuthenUser;
+
+class User extends Authenticatable
+{
+    use Notifiable, AuthenUser;
+
+    /**
+     * Get the name of the unique identifier for the user.
+     *
+     * @return array
+     */
+    public function getAuthIdentifiersName()
+    {
+        return ['email', 'username', 'phone_number'];
+    }
+}
+```
+
+With this setup, you can now check either `email`, `username` or `phone_number` during authentication.
+
+### Examples
+
+Here's an example how to login.
+
+```php
+<?php 
+
+use Illuminate\Support\Facades\Auth;
+
+$data = ['identifier' => 'crynobone@gmail.com', 'password' => 'foobar'];
+
+if (Auth::attempt($data)) {
+    // you can logged in, you can also pass your phone number of username to `identifier`.
+}
+```
