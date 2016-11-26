@@ -28,3 +28,30 @@ And then run `composer install` from the terminal.
 Above installation can also be simplify by using the following command:
 
     composer require "laravie/authen=~0.1"
+
+## Usages
+
+First you can attach the auth provider on `App\Providers\AuthServiceProvider`:
+
+```php
+<?php
+
+namespace App\Providers;
+
+use Laravie\Authen\BootAuthenProvider;
+use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+
+class AuthServiceProvider extends ServiceProvider
+{
+    /**
+     * Register any authentication / authorization services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        $this->registerPolicies();
+
+        $this->bootAuthenProvider();
+    }
+}
