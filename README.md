@@ -43,6 +43,8 @@ use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvid
 
 class AuthServiceProvider extends ServiceProvider
 {
+    use BootAuthenProvider;
+    
     /**
      * Register any authentication / authorization services.
      *
