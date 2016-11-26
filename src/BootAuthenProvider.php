@@ -14,7 +14,7 @@ trait BootAuthenProvider
     protected function bootAuthenProvider()
     {
         Auth::provider('authen', function ($app, array $config) {
-            return new AuthenUserProvider($app['hash'], $config['model']);
+            return new AuthenUserProvider($app->make('hash'), $config['model']);
         });
     }
 }
