@@ -16,7 +16,7 @@ To install through composer, simply put the following in your `composer.json` fi
 ```json
 {
     "require": {
-        "laravie/authen": "~0.1"
+        "laravie/authen": "~0.2"
     }
 }
 ```
