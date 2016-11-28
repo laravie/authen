@@ -18,7 +18,7 @@ class AuthenUserProvider extends EloquentUserProvider
      */
     public function retrieveByCredentials(array $credentials)
     {
-        if (! isset($credentials['identifier'])) {
+        if (! isset($credentials['identifier']) || empty($credentials['identifier'])) {
             return parent::retrieveByCredentials($credentials);
         }
 
