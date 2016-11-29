@@ -18,12 +18,14 @@ class AuthenUserProvider extends EloquentUserProvider
      */
     public function retrieveByCredentials(array $credentials)
     {
-        if (! isset($credentials['identifier']) || empty($credentials['identifier'])) {
+        $name = Authen::getIdentifierName();
+
+        if (! isset($credentials[$name]) || empty($credentials[$name])) {
             return parent::retrieveByCredentials($credentials);
         }
 
-        $identifier = $credentials['identifier'];
-        unset($credentials['identifier']);
+        $identifier = $credentials[$name];
+        unset($credentials[$name]);
 
         // First we will add each credential element to the query as a where clause.
         // Then we can execute the query and, if we found a user, return it in a
