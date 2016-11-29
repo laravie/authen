@@ -27,7 +27,7 @@ And then run `composer install` from the terminal.
 
 Above installation can also be simplify by using the following command:
 
-    composer require "laravie/authen=~0.1"
+    composer require "laravie/authen=~0.2"
 
 ## Usages
 
