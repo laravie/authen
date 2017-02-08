@@ -25,8 +25,9 @@
     },
     "require-dev": {
         "illuminate/database": "^5.2",
-        "orchestra/database": "~3.2",
-        "orchestra/testbench": "~3.2"
+        "orchestra/database": "~3.2.3 || v3.3.6 || ~3.4",
+        "orchestra/testbench": "~3.2.6 || ~3.3.5 || ~3.4.4 || ~3.5",
+        "phpunit/phpunit": "~5.7"
     },
     "extra": {
         "branch-alias": {
