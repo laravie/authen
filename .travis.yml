@@ -12,7 +12,6 @@ env:
     - setup=basic
     - coverage=no
   matrix:
-    - laravel=5.2.*
     - laravel=5.3.*
     - laravel=5.4.*
     - laravel=5.5.*
