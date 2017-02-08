@@ -11,12 +11,17 @@ env:
   global:
     - setup=basic
     - coverage=no
+  matrix:
+    - laravel=5.2.*
+    - laravel=5.3.*
+    - laravel=5.4.*
+    - laravel=5.5.*
 
 before_script:
   - composer config discard-changes true
-  - if [[ $setup = 'basic' ]]; then travis_retry composer install --prefer-dist --no-interaction; fi
-  - if [[ $setup = 'stable' ]]; then travis_retry composer update --prefer-dist --no-interaction --prefer-stable; fi
-  - if [[ $setup = 'lowest' ]]; then travis_retry composer update --prefer-dist --no-interaction --prefer-lowest --prefer-stable; fi
+  - if [[ $setup = 'basic' ]]; then travis_retry composer require "laravel/framework=${laravel}" --prefer-dist --no-interaction; fi
+  - if [[ $setup = 'stable' ]]; then travis_retry composer require "laravel/framework=${laravel}" --prefer-dist --no-interaction --prefer-stable; fi
+  - if [[ $setup = 'lowest' ]]; then travis_retry composer require "laravel/framework=${laravel}" --prefer-dist --no-interaction --prefer-lowest --prefer-stable; fi
 
 script:
   - ./vendor/bin/phpunit -c phpunit.xml
@@ -28,4 +33,5 @@ matrix:
     - php: 5.6
       env: setup=stable
   allow_failures:
+    - env: setup=lowest
   fast_finish: true
