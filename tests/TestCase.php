@@ -14,10 +14,7 @@ abstract class TestCase extends BaseTestCase
         parent::setUp();
 
         $this->withFactories(__DIR__.'/factories');
-        $this->loadMigrationsFrom([
-            '--database' => 'testing',
-            '--realpath' => realpath(__DIR__.'/migrations'),
-        ]);
+        $this->loadLaravelMigrations(['--database' => 'testing']);
     }
 
     /**
@@ -46,7 +43,6 @@ abstract class TestCase extends BaseTestCase
     protected function getEnvironmentSetUp($app)
     {
         $config = $app->make('config');
-
 
         $config->set([
             'auth.providers.users' => [

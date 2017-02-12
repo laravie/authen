@@ -24,8 +24,7 @@
         "illuminate/auth": "~5.3"
     },
     "require-dev": {
-        "orchestra/database": "~3.3.6 || ~3.4",
-        "orchestra/testbench": "~3.3.5 || ~3.4.4 || ~3.5",
+        "orchestra/testbench": "~3.3.6 || ~3.4.5 || ~3.5",
         "mockery/mockery": "^0.9.4",
         "phpunit/phpunit": "~5.7"
     },
