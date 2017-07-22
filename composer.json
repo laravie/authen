@@ -27,7 +27,7 @@
         "orchestra/database": "~3.3.6 || ~3.4",
         "orchestra/testbench": "~3.3.5 || ~3.4.4 || ~3.5",
         "mockery/mockery": "^0.9.4",
-        "phpunit/phpunit": "~5.7"
+        "phpunit/phpunit": "~5.7 || ~6.0"
     },
     "extra": {
         "branch-alias": {
