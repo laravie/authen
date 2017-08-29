@@ -47,7 +47,6 @@ abstract class TestCase extends BaseTestCase
     {
         $config = $app->make('config');
 
-
         $config->set([
             'auth.providers.users' => [
                 'driver' => 'authen',

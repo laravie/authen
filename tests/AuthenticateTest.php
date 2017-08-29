@@ -9,7 +9,7 @@ use Laravie\Authen\Tests\Stubs\User;
 class AuthenticateTest extends TestCase
 {
     /** @test */
-    public function authenticate_user_with_username()
+    function it_can_authenticate_user_with_username()
     {
         $user = factory(User::class)->create();
 
@@ -17,7 +17,7 @@ class AuthenticateTest extends TestCase
     }
 
     /** @test */
-    public function authenticate_user_with_custom_identifier()
+    function it_can_authenticate_user_with_custom_identifier()
     {
         $user = factory(User::class)->create();
 
