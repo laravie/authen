@@ -20,7 +20,7 @@
         }
     },
     "require": {
-        "php": ">=7.0",
+        "php": ">=5.6",
         "illuminate/auth": "~5.4"
     },
     "require-dev": {
