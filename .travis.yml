@@ -26,18 +26,6 @@ script:
 
 matrix:
   include:
-    - php: 5.6
-      env:
-        - setup=basic
-        - laravel=5.4.*
-    - php: 5.6
-      env:
-        - setup=lowest
-        - laravel=5.4.*
-    - php: 5.6
-      env:
-        - setup=stable
-        - laravel=5.4.*
     - php: 7.0
       env:
         - setup=lowest
@@ -59,5 +47,10 @@ matrix:
         - setup=stable
         - laravel=dev-master
   allow_failures:
-    - env: laravel=dev-master
+    - php: 7.1
+      env: setup=lowest laravel=dev-master
+    - php: 7.1
+      env: setup=basic laravel=dev-master
+    - php: 7.1
+      env: setup=stable laravel=dev-master
   fast_finish: true

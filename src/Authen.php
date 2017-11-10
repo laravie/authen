@@ -18,7 +18,7 @@ class Authen
      *
      * @return string
      */
-    public static function getIdentifierName()
+    public static function getIdentifierName(): string
     {
         return static::$identifier;
     }
@@ -30,7 +30,7 @@ class Authen
      *
      * @throws \InvalidArgumentException
      */
-    public static function setIdentifierName($identifier)
+    public static function setIdentifierName(string $identifier)
     {
         if (empty($identifier)) {
             throw new InvalidArgumentException("Identifier shouldn't be empty.");

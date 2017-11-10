@@ -14,7 +14,7 @@ trait AuthenUser
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeFindByIdentifiers(Builder $query, $username)
+    public function scopeFindByIdentifiers(Builder $query, $username): Builder
     {
         $identifiers = $this->getAuthIdentifiersName();
 
