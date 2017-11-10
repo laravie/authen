@@ -14,7 +14,6 @@ env:
   matrix:
     - laravel=5.4.*
     - laravel=5.5.*
-    - laravel=dev-master
 
 before_script:
   - composer config discard-changes true
@@ -47,6 +46,18 @@ matrix:
       env:
         - setup=stable
         - laravel=5.5.*
+    - php: 7.1
+      env:
+        - setup=lowest
+        - laravel=dev-master
+    - php: 7.1
+      env:
+        - setup=basic
+        - laravel=dev-master
+    - php: 7.1
+      env:
+        - setup=stable
+        - laravel=dev-master
   allow_failures:
     - env: laravel=dev-master
   fast_finish: true
