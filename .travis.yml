@@ -3,7 +3,6 @@ language: php
 sudo: false
 
 php:
-  - 7.0
   - 7.1
   - 7.2
 
@@ -12,8 +11,8 @@ env:
     - setup=basic
     - coverage=no
   matrix:
-    - laravel=5.4.*
     - laravel=5.5.*
+    - laravel=dev-master
 
 before_script:
   - composer config discard-changes true
@@ -32,25 +31,12 @@ matrix:
         - laravel=5.5.*
     - php: 7.0
       env:
+        - setup=basic
+        - laravel=5.5.*
+    - php: 7.0
+      env:
         - setup=stable
         - laravel=5.5.*
-    - php: 7.1
-      env:
-        - setup=lowest
-        - laravel=dev-master
-    - php: 7.1
-      env:
-        - setup=basic
-        - laravel=dev-master
-    - php: 7.1
-      env:
-        - setup=stable
-        - laravel=dev-master
   allow_failures:
-    - php: 7.1
-      env: setup=lowest laravel=dev-master
-    - php: 7.1
-      env: setup=basic laravel=dev-master
-    - php: 7.1
-      env: setup=stable laravel=dev-master
+    - env: laravel=dev-master
   fast_finish: true
