@@ -32,5 +32,5 @@ trait AuthenUser
      *
      * @return array
      */
-    abstract public function getAuthIdentifiersName();
+    abstract public function getAuthIdentifiersName(): array;
 }
