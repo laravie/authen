@@ -11,8 +11,8 @@ env:
     - setup=basic
     - coverage=no
   matrix:
-    - laravel=5.5.*
-    - laravel=5.6.*
+    - laravel=~5.5.0
+    - laravel=~5.6.0
     - laravel=dev-master
 
 before_script:
@@ -29,11 +29,11 @@ matrix:
     - php: 7.0
       env:
         - setup=lowest
-        - laravel=5.5.*
+        - laravel=~5.5.0
     - php: 7.0
       env:
         - setup=basic
-        - laravel=5.5.*
+        - laravel=~5.5.0
     - php: 7.0
       env:
         - setup=stable
