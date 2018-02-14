@@ -3,8 +3,6 @@
 namespace Laravie\Authen;
 
 use Illuminate\Support\Str;
-use Illuminate\Database\Eloquent\Builder;
-use Laravie\Authen\Contracts\Identifiers;
 use Illuminate\Auth\EloquentUserProvider;
 
 class AuthenUserProvider extends EloquentUserProvider

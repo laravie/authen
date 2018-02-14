@@ -51,7 +51,7 @@ abstract class TestCase extends BaseTestCase
             'auth.providers.users' => [
                 'driver' => 'authen',
                 'model' => \Laravie\Authen\Tests\Stubs\User::class,
-            ]
+            ],
         ]);
     }
 }
