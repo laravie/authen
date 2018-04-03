@@ -1,2 +1,6 @@
+# Composer
 /vendor/
 composer.lock
+
+# PHPUnit
+/coverage/
