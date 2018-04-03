@@ -68,6 +68,7 @@ Secondly, you need to update the related `App\User` (or the eloquent model mappe
 
 ```php
 <?php
+
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
