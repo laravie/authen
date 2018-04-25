@@ -21,13 +21,13 @@
     },
     "require": {
         "php": ">=7.0",
-        "illuminate/auth": "~5.5"
+        "illuminate/auth": "^5.5"
     },
     "require-dev": {
-        "mockery/mockery": "~1.0",
-        "orchestra/database": "~3.5",
-        "orchestra/testbench": "~3.5",
-        "phpunit/phpunit": "~6.0 || ~7.0"
+        "mockery/mockery": "^1.0",
+        "orchestra/database": "^3.5",
+        "orchestra/testbench": "^3.5",
+        "phpunit/phpunit": "^6.0 || ^7.0"
     },
     "extra": {
         "branch-alias": {
