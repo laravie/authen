@@ -6,6 +6,7 @@ User Authentication Identifiers for Laravel
 [![Total Downloads](https://poser.pugx.org/laravie/authen/downloads)](https://packagist.org/packages/laravie/authen)
 [![Latest Unstable Version](https://poser.pugx.org/laravie/authen/v/unstable)](https://packagist.org/packages/laravie/authen)
 [![License](https://poser.pugx.org/laravie/authen/license)](https://packagist.org/packages/laravie/authen)
+[![Coverage Status](https://coveralls.io/repos/github/laravie/authen/badge.svg?branch=master)](https://coveralls.io/github/laravie/authen?branch=master)
 
 Imagine you need to login a user with either "email", "username" or "phone number" just like how Facebook allows it. This is not possible with Laravel since you're limited to only one unique username/identifier key. This package attempt to solve the issue by allowing to use a unified key "identifier" and you can customize which attributes Laravel should check during authentication.
 
