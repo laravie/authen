@@ -32,7 +32,6 @@ abstract class TestCase extends BaseTestCase
         return [
             \Laravie\Authen\AuthenServiceProvider::class,
             \Laravie\Authen\Tests\Stubs\AuthServiceProvider::class,
-            \Orchestra\Database\ConsoleServiceProvider::class,
         ];
     }
 

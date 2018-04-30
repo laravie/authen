@@ -26,4 +26,24 @@ class AuthenticateTest extends TestCase
         $this->assertTrue(Auth::validate(['username' => $user->username, 'password' => 'secret']));
         $this->assertFalse(Auth::validate(['email' => $user->username, 'password' => 'secret']));
     }
+
+    /**
+     * @test
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Identifier shouldn't be empty.
+     */
+    public function it_cant_set_empty_identifier_name()
+    {
+        Authen::setIdentifierName('');
+    }
+
+    /**
+     * @test
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Identifier [password] is not allowed!
+     */
+    public function it_cant_password_as_identifier_name()
+    {
+        Authen::setIdentifierName('password');
+    }
 }
