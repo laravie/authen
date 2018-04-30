@@ -20,9 +20,14 @@ before_script:
   - if [[ $setup = 'basic' ]]; then travis_retry composer require "laravel/framework=${laravel}" --prefer-dist --no-interaction; fi
   - if [[ $setup = 'stable' ]]; then travis_retry composer require "laravel/framework=${laravel}" --prefer-dist --no-interaction --prefer-stable; fi
   - if [[ $setup = 'lowest' ]]; then travis_retry composer require "laravel/framework=${laravel}" --prefer-dist --no-interaction --prefer-lowest --prefer-stable; fi
+  - if [[ $setup = 'coveralls' ]]; then travis_retry composer require "laravel/framework=${laravel}" "satooshi/php-coveralls=~1.0" --prefer-dist --no-interaction --dev; fi
 
 script:
-  - ./vendor/bin/phpunit -c phpunit.xml
+  - if [[ $coverage = 'yes' ]]; then vendor/bin/phpunit -c phpunit.xml --coverage-clover build/logs/clover.xml; fi
+  - if [[ $coverage = 'no' ]]; then vendor/bin/phpunit -c phpunit.xml; fi
+
+after_script:
+  - if [[ $setup = 'coveralls' ]]; then php vendor/bin/coveralls -v; fi
 
 matrix:
   include:
@@ -38,6 +43,9 @@ matrix:
       env:
         - setup=stable
         - laravel=5.5.*
+    - php: 7.1
+      env: setup=coveralls coverage=yes laravel=5.5.*
   allow_failures:
     - env: laravel=dev-master
+    - env: setup=coveralls coverage=yes laravel=5.5.*
   fast_finish: true
