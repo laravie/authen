@@ -4,6 +4,7 @@ namespace Laravie\Authen;
 
 use Illuminate\Support\Str;
 use Illuminate\Auth\EloquentUserProvider;
+use Illuminate\Contracts\Auth\Authenticatable;
 
 class AuthenUserProvider extends EloquentUserProvider
 {
@@ -14,7 +15,7 @@ class AuthenUserProvider extends EloquentUserProvider
      *
      * @return \Illuminate\Contracts\Auth\Authenticatable|null
      */
-    public function retrieveByCredentials(array $credentials)
+    public function retrieveByCredentials(array $credentials): ?Authenticatable
     {
         $name = Authen::getIdentifierName();
 

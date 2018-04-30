@@ -30,7 +30,7 @@ class Authen
      *
      * @throws \InvalidArgumentException
      */
-    public static function setIdentifierName(string $identifier)
+    public static function setIdentifierName(string $identifier): void
     {
         if (empty($identifier)) {
             throw new InvalidArgumentException("Identifier shouldn't be empty.");

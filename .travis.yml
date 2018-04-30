@@ -11,7 +11,6 @@ env:
     - setup=basic
     - coverage=no
   matrix:
-    - laravel=5.5.*
     - laravel=5.6.*
     - laravel=dev-master
 
@@ -31,21 +30,21 @@ after_script:
 
 matrix:
   include:
-    - php: 7.0
+    - php: 7.1
       env:
         - setup=lowest
-        - laravel=5.5.*
-    - php: 7.0
+        - laravel=5.6.*
+    - php: 7.1
       env:
         - setup=basic
-        - laravel=5.5.*
-    - php: 7.0
+        - laravel=5.6.*
+    - php: 7.1
       env:
         - setup=stable
-        - laravel=5.5.*
+        - laravel=5.6.*
     - php: 7.1
-      env: setup=coveralls coverage=yes laravel=5.5.*
+      env: setup=coveralls coverage=yes laravel=5.6.*
   allow_failures:
     - env: laravel=dev-master
-    - env: setup=coveralls coverage=yes laravel=5.5.*
+    - env: setup=coveralls coverage=yes laravel=5.6.*
   fast_finish: true
