@@ -12,6 +12,7 @@ env:
     - coverage=no
   matrix:
     - laravel=5.6.*
+    - laravel=5.7.*
     - laravel=dev-master
 
 before_script:
@@ -42,6 +43,19 @@ matrix:
       env:
         - setup=stable
         - laravel=5.6.*
+
+    - php: 7.1
+      env:
+        - setup=lowest
+        - laravel=5.7.*
+    - php: 7.1
+      env:
+        - setup=basic
+        - laravel=5.7.*
+    - php: 7.1
+      env:
+        - setup=stable
+        - laravel=5.7.*
     - php: 7.1
       env: setup=coveralls coverage=yes laravel=5.6.*
   allow_failures:
