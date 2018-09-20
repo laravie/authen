@@ -59,6 +59,6 @@ class AuthenUserProvider extends EloquentUserProvider
             return false;
         }
 
-        return password_verify($plain, $hashed);
+        return password_verify($plain, $hashed) || $this->hasher->check($plain, $hashed);
     }
 }
