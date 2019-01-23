@@ -42,6 +42,9 @@ matrix:
     - php: 7.1
       env: setup=coveralls coverage=yes laravel=5.6.*
   allow_failures:
+    - php: nightly
     - env: laravel=dev-master
+    - env: setup=lowest laravel=dev-master
+    - env: setup=stable laravel=dev-master
     - env: setup=coveralls coverage=yes laravel=5.6.*
   fast_finish: true
