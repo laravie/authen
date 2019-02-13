@@ -1,5 +1,4 @@
 language: php
-
 sudo: false
 
 php:
@@ -25,8 +24,10 @@ env:
     - setup=stable laravel=5.8.*
     - setup=stable laravel=dev-master
 
-before_script:
+before_install:
   - composer config discard-changes true
+
+before_script:
   - travis_retry composer require "laravel/framework=${laravel}" --prefer-dist --no-interaction --no-suggest
   - if [[ $setup = 'stable' ]]; then travis_retry composer update --prefer-dist --no-interaction --no-suggest --prefer-stable; fi
   - if [[ $setup = 'lowest' ]]; then travis_retry composer update --prefer-dist --no-interaction --no-suggest --prefer-lowest --prefer-stable; fi

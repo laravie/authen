@@ -2,6 +2,14 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `laravie/authen`.
 
+## 2.2.0
+
+Released: 2019-02-13
+
+### Changes
+
+* Use `password_verify()` directly when verifying password hash and fallback to `Illuminate\Contracts\Hashing\Hasher::check()`.
+
 ## 2.1.1
 
 Released: 2018-09-13
