@@ -15,12 +15,15 @@ env:
   matrix:
     - laravel=5.6.*
     - laravel=5.7.*
+    - laravel=5.8.*
     - laravel=dev-master
     - setup=lowest laravel=5.6.*
     - setup=lowest laravel=5.7.*
+    - setup=lowest laravel=5.8.*
     - setup=lowest laravel=dev-master
     - setup=stable laravel=5.6.*
     - setup=stable laravel=5.7.*
+    - setup=stable laravel=5.8.*
     - setup=stable laravel=dev-master
 
 before_script:
