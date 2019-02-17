@@ -34,7 +34,7 @@ class Authen
     {
         if (empty($identifier)) {
             throw new InvalidArgumentException("Identifier shouldn't be empty.");
-        } elseif (in_array($identifier, ['password'])) {
+        } elseif (\in_array($identifier, ['password'])) {
             throw new InvalidArgumentException("Identifier [{$identifier}] is not allowed!");
         }
 
