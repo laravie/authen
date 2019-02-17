@@ -55,10 +55,10 @@ class AuthenUserProvider extends EloquentUserProvider
         $plain = $credentials['password'];
         $hashed = $user->getAuthPassword();
 
-        if (strlen($hashed) === 0) {
+        if (\strlen($hashed) === 0) {
             return false;
         }
 
-        return password_verify($plain, $hashed) || $this->hasher->check($plain, $hashed);
+        return \password_verify($plain, $hashed) || $this->hasher->check($plain, $hashed);
     }
 }
