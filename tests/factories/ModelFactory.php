@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -20,6 +22,6 @@ $factory->define(Laravie\Authen\Tests\Stubs\User::class, function (Faker\Generat
         'email' => $faker->unique()->safeEmail,
         'username' => $faker->unique()->userName,
         'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
+        'remember_token' => Str::random(10),
     ];
 });
