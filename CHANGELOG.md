@@ -4,7 +4,7 @@ This changelog references the relevant changes (bug and security fixes) done to 
 
 ## 2.2.1
 
-Unreleased
+Released: 2019-02-21
 
 ### Changes
 
