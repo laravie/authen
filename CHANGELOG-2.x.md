@@ -1,6 +1,14 @@
-# Changelog
+# Release Notes for v2.x
 
 This changelog references the relevant changes (bug and security fixes) done to `laravie/authen`.
+
+## 2.3.0
+
+Released: 2019-04-08
+
+### Changes
+
+* Remove support for Laravel Framework v5.7 and below.
 
 ## 2.2.1
 
