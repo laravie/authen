@@ -35,6 +35,12 @@ after_script:
 
 matrix:
   include:
+    - php: 7.1
+      env: laravel=5.8.*
+    - php: 7.1
+      env: setup=stable laravel=5.8.*
+    - php: 7.1
+      env: setup=lowest laravel=5.8.*
     - php: 7.2
       env: setup=coveralls coverage=yes laravel=5.8.*
   allow_failures:
