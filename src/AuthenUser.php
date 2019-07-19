@@ -18,7 +18,7 @@ trait AuthenUser
     {
         $identifiers = $this->getAuthIdentifiersName();
 
-        $query->where(function ($query) use ($identifiers, $username) {
+        $query->where(static function ($query) use ($identifiers, $username) {
             foreach ($identifiers as $key) {
                 $query->orWhere($key, '=', $username);
             }

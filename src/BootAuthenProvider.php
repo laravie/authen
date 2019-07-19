@@ -13,7 +13,7 @@ trait BootAuthenProvider
      */
     protected function bootAuthenProvider(): void
     {
-        Auth::provider('authen', function ($app, array $config) {
+        Auth::provider('authen', static function ($app, array $config) {
             return new AuthenUserProvider($app->make('hash'), $config['model']);
         });
     }
