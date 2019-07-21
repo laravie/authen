@@ -2,6 +2,14 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `laravie/authen`.
 
+## 2.3.1
+
+Released: 2019-07-21
+
+### Changes
+
+* Use `static function` whenever possible.
+
 ## 2.3.0
 
 Released: 2019-04-08
