@@ -10,13 +10,8 @@ env:
     - setup=basic
     - coverage=no
   matrix:
-    - laravel=5.8.*
     - laravel=dev-master
-    - setup=stable laravel=5.8.*
-    - setup=stable laravel=5.9.*
     - setup=stable laravel=dev-master
-    - setup=lowest laravel=5.8.*
-    - setup=lowest laravel=5.9.*
     - setup=lowest laravel=dev-master
 
 before_install:
@@ -37,17 +32,8 @@ after_script:
 
 matrix:
   include:
-    - php: 7.1
-      env: laravel=5.8.*
-    - php: 7.1
-      env: setup=stable laravel=5.8.*
-    - php: 7.1
-      env: setup=lowest laravel=5.8.*
     - php: 7.2
-      env: setup=coveralls coverage=yes laravel=5.8.*
+      env: setup=coveralls coverage=yes laravel=dev-master
   allow_failures:
-    - env: laravel=dev-master
-    - env: setup=lowest laravel=dev-master
-    - env: setup=stable laravel=dev-master
-    - env: setup=coveralls coverage=yes laravel=5.8.*
+    - env: setup=coveralls coverage=yes laravel=dev-master
   fast_finish: true
