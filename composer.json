@@ -20,16 +20,16 @@
         }
     },
     "require": {
-        "php": ">=7.1",
-        "illuminate/auth": "^5.8"
+        "php": ">=7.2",
+        "illuminate/auth": "dev-master"
     },
     "require-dev": {
         "mockery/mockery": "^1.2",
-        "orchestra/testbench": "^3.8"
+        "orchestra/testbench": "^4.0"
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.3-dev"
+            "dev-master": "3.0-dev"
         }
     },
     "config": {
