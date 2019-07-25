@@ -10,8 +10,11 @@ env:
     - setup=basic
     - coverage=no
   matrix:
+    - laravel=5.8
     - laravel=dev-master
+    - setup=stable laravel=5.8
     - setup=stable laravel=dev-master
+    - setup=lowest laravel=5.8
     - setup=lowest laravel=dev-master
 
 before_install:
