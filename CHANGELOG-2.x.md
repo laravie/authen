@@ -8,7 +8,7 @@ Released: 2019-07-21
 
 ### Changes
 
-* Use `static function` whenever possible.
+* Use `static function` rather than `function` whenever possible, the PHP engine does not need to instantiate and later GC a `$this` variable for said closure.
 
 ## 2.3.0
 
