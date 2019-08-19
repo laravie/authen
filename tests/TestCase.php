@@ -16,7 +16,7 @@ abstract class TestCase extends BaseTestCase
         $this->withFactories(__DIR__.'/factories');
         $this->loadMigrationsFrom([
             '--database' => 'testing',
-            '--realpath' => realpath(__DIR__.'/migrations'),
+            '--path' => realpath(__DIR__.'/migrations'),
         ]);
     }
 
