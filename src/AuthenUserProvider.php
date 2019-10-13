@@ -31,8 +31,8 @@ class AuthenUserProvider extends EloquentUserProvider
         // Eloquent User "model" that will be utilized by the Guard instances.
 
         $query = $this->createModel()
-                    ->newQuery()
-                    ->findByIdentifiers($identifier);
+            ->newQuery()
+            ->findByIdentifiers($identifier);
 
         foreach ($credentials as $key => $value) {
             if (! Str::contains($key, 'password')) {
