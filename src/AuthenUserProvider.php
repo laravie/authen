@@ -48,6 +48,7 @@ class AuthenUserProvider extends EloquentUserProvider
      *
      * @param  \Illuminate\Contracts\Auth\Authenticatable  $user
      * @param  array  $credentials
+     *
      * @return bool
      */
     public function validateCredentials(UserContract $user, array $credentials): bool

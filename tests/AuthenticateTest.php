@@ -40,7 +40,7 @@ class AuthenticateTest extends TestCase
     public function it_cant_password_as_identifier_name()
     {
         $this->expectException('InvalidArgumentException');
-        $this->expectExceptionMessage("Identifier [password] is not allowed!");
+        $this->expectExceptionMessage('Identifier [password] is not allowed!');
 
         Authen::setIdentifierName('password');
     }
