@@ -124,8 +124,9 @@ Here's an example how to login.
 <?php 
 
 use Illuminate\Support\Facades\Auth;
+use Laravie\Authen\Authen;
 
-$data = ['identifier' => 'crynobone@gmail.com', 'password' => 'foobar'];
+$data = [Authen::getIdentifierName() => 'crynobone@gmail.com', 'password' => 'foobar'];
 
 if (Auth::attempt($data)) {
     // you can logged in, you can also pass your phone number of username to `identifier`.
