@@ -42,6 +42,6 @@ matrix:
     - php: 7.2
       env: setup=coveralls coverage=yes laravel=^5.8
   allow_failures:
-      env: setup=lowest laravel=^5.8
+    - env: setup=lowest laravel=^5.8
     - env: setup=coveralls coverage=yes laravel=^5.8
   fast_finish: true
