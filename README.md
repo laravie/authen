@@ -13,23 +13,9 @@ Imagine you need to login a user with either "email", "username" or "phone numbe
 
 ## Installation
 
-To install through composer, simply put the following in your `composer.json` file:
+To install through composer, run the following command from terminal:
 
-```json
-{
-    "require": {
-        "laravie/authen": "^2.0"
-    }
-}
-```
-
-And then run `composer install` from the terminal.
-
-### Quick Installation
-
-Above installation can also be simplify by using the following command:
-
-    composer require "laravie/authen=^2.0"
+    composer require "laravie/authen"
 
 ## Usages
 
