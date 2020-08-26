@@ -2,6 +2,16 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `laravie/authen`.
 
+## 2.5.0
+
+*Unreleased*
+
+### Changes
+
+* Update minimum PHP to 7.2+.
+* Add support for Laravel Framework v8.0.
+* Drop support for Laravel Framework v5.8.
+
 ## 2.4.0
 
 Released: 2019-08-26
