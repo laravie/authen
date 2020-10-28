@@ -31,7 +31,7 @@ abstract class TestCase extends BaseTestCase
     {
         return [
             \Laravie\Authen\AuthenServiceProvider::class,
-            \Laravie\Authen\Tests\Stubs\AuthServiceProvider::class,
+            \Laravie\Authen\Tests\Fixtures\AuthServiceProvider::class,
         ];
     }
 
@@ -49,7 +49,7 @@ abstract class TestCase extends BaseTestCase
         $config->set([
             'auth.providers.users' => [
                 'driver' => 'authen',
-                'model' => \Laravie\Authen\Tests\Stubs\User::class,
+                'model' => \Laravie\Authen\Tests\Fixtures\User::class,
             ],
         ]);
     }

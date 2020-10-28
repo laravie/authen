@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravie\Authen\Tests\Stubs;
+namespace Laravie\Authen\Tests\Fixtures;
 
 use Laravie\Authen\AuthenUser;
 use Illuminate\Foundation\Auth\User as Eloquent;
@@ -14,7 +14,7 @@ class User extends Eloquent
      *
      * @return array
      */
-    public function getAuthIdentifiersName()
+    public function getAuthIdentifiersName(): array
     {
         return ['email', 'username'];
     }

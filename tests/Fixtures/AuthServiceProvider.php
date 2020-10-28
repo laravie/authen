@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravie\Authen\Tests\Stubs;
+namespace Laravie\Authen\Tests\Fixtures;
 
 use Laravie\Authen\BootAuthenProvider;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
