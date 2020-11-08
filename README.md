@@ -1,7 +1,7 @@
 User Authentication Identifiers for Laravel
 ==============
 
-[![Build Status](https://travis-ci.org/laravie/authen.svg?branch=master)](https://travis-ci.org/laravie/authen)
+[![tests](https://github.com/laravie/authen/workflows/tests/badge.svg?branch=2.x)](https://github.com/laravie/authen/actions?query=workflow%3Atests+branch%3A2.x)
 [![Latest Stable Version](https://poser.pugx.org/laravie/authen/v/stable)](https://packagist.org/packages/laravie/authen)
 [![Total Downloads](https://poser.pugx.org/laravie/authen/downloads)](https://packagist.org/packages/laravie/authen)
 [![Latest Unstable Version](https://poser.pugx.org/laravie/authen/v/unstable)](https://packagist.org/packages/laravie/authen)
