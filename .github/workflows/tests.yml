@@ -50,5 +50,6 @@ jobs:
         uses: "ramsey/composer-install@v1"
         with:
           composer-options: "--prefer-dist --no-cache"
+          dependency-versions: "${{ matrix.dependencies }}"
       - name: Execute tests
         run: vendor/bin/phpunit
