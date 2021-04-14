@@ -2,6 +2,14 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `laravie/authen`.
 
+## 2.6.0
+
+Released: 2021-04-15
+
+### Changes
+
+* Clean-up dependencies requirement and multiple trivia changes.
+
 ## 2.5.0
 
 Released: 2020-08-29
