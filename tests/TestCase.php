@@ -13,7 +13,6 @@ abstract class TestCase extends BaseTestCase
     {
         parent::setUp();
 
-        $this->withFactories(__DIR__.'/factories');
         $this->loadMigrationsFrom([
             '--database' => 'testing',
             '--path' => realpath(__DIR__.'/migrations'),
@@ -42,7 +41,7 @@ abstract class TestCase extends BaseTestCase
      *
      * @return void
      */
-    protected function getEnvironmentSetUp($app)
+    protected function defineEnvironment($app)
     {
         $config = $app->make('config');
 
