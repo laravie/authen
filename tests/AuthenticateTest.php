@@ -4,7 +4,7 @@ namespace Laravie\Authen\Tests;
 
 use Illuminate\Support\Facades\Auth;
 use Laravie\Authen\Authen;
-use Laravie\Authen\Tests\Factory\UserFactory;
+use Laravie\Authen\Tests\Factories\UserFactory;
 
 class AuthenticateTest extends TestCase
 {

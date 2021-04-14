@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravie\Authen\Tests\Factory;
+namespace Laravie\Authen\Tests\Factories;
 
 use Illuminate\Support\Str;
 use Laravie\Authen\Tests\Fixtures\User;
