@@ -7,19 +7,6 @@ use Orchestra\Testbench\TestCase as BaseTestCase;
 abstract class TestCase extends BaseTestCase
 {
     /**
-     * Setup the test environment.
-     */
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        $this->loadMigrationsFrom([
-            '--database' => 'testing',
-            '--path' => realpath(__DIR__.'/migrations'),
-        ]);
-    }
-
-    /**
      * Get package providers.
      *
      * @param  \Illuminate\Foundation\Application  $app
@@ -50,6 +37,19 @@ abstract class TestCase extends BaseTestCase
                 'driver' => 'authen',
                 'model' => \Laravie\Authen\Tests\Fixtures\User::class,
             ],
+        ]);
+    }
+
+    /**
+     * Define database migrations.
+     *
+     * @return void
+     */
+    protected function defineDatabaseMigrations()
+    {
+        $this->loadMigrationsFrom([
+            '--database' => 'testing',
+            '--path' => realpath(__DIR__.'/migrations'),
         ]);
     }
 }
