@@ -9,7 +9,7 @@ use Laravie\Authen\Tests\Fixtures\User;
 class AuthenticateTest extends TestCase
 {
     /** @test */
-    public function it_can_authenticate_user_with_username()
+    public function itCanAuthenticateUserWithUsername()
     {
         $user = factory(User::class)->create();
 
@@ -17,7 +17,7 @@ class AuthenticateTest extends TestCase
     }
 
     /** @test */
-    public function it_can_authenticate_user_with_custom_identifier()
+    public function itCanAuthenticateUserWithCustomIdentifier()
     {
         $user = factory(User::class)->create();
 
@@ -28,7 +28,7 @@ class AuthenticateTest extends TestCase
     }
 
     /** @test */
-    public function it_cant_set_empty_identifier_name()
+    public function itCantSetEmptyIdentifierName()
     {
         $this->expectException('InvalidArgumentException');
         $this->expectExceptionMessage("Identifier shouldn't be empty.");
@@ -37,7 +37,7 @@ class AuthenticateTest extends TestCase
     }
 
     /** @test */
-    public function it_cant_password_as_identifier_name()
+    public function itCantPasswordAsIdentifierName()
     {
         $this->expectException('InvalidArgumentException');
         $this->expectExceptionMessage('Identifier [password] is not allowed!');
