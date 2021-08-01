@@ -1,4 +1,4 @@
-name: coveralls
+name: analyse
 
 on:
   push:
@@ -30,20 +30,13 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           extensions: dom, curl, libxml, mbstring, zip, pcntl, sqlite3, pdo_sqlite, bcmath, fileinfo
-          coverage: xdebug
+          coverage: none
 
       - name: Install dependencies
         uses: "ramsey/composer-install@v1"
         with:
           dependency-versions: "${{ matrix.dependencies }}"
-          composer-options: "--prefer-dist"
+          composer-options: "--prefer-dist --no-cache"
 
-      - name: Execute tests
-        run: vendor/bin/phpunit --coverage-clover build/logs/clover.xml
-
-      - name: Upload coverage results to Coveralls
-        env:
-          COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          composer global require php-coveralls/php-coveralls
-          php-coveralls --coverage_clover=build/logs/clover.xml -v
+      - name: Execute Static Code Analysis
+        run: vendor/bin/phpstan analyse
