@@ -1,0 +1,7 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Call to an undefined method Illuminate\\\\Database\\\\Eloquent\\\\Builder\\:\\:findByIdentifiers\\(\\)\\.$#"
+			count: 1
+			path: src/AuthenUserProvider.php
+

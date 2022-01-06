@@ -1,4 +1,4 @@
-name: coveralls
+name: tests-on-windows
 
 on:
   push:
@@ -11,15 +11,23 @@ jobs:
     strategy:
       matrix:
         os:
-          - "ubuntu-latest"
+          - "windows-latest"
         php:
+          - "7.3"
+          - "7.4"
           - "8.0"
         dependencies:
           - "locked"
+          - "highest"
+          - "lowest"
+        laravel:
+          - "6.x"
+          - "7.x"
+          - "8.x"
         experimental:
           - false
 
-    name: PHP${{ matrix.php }} on ${{ matrix.os }} (${{ matrix.dependencies }})
+    name: Laravel ${{ matrix.laravel }} on PHP${{ matrix.php }}-${{ matrix.os }} (${{ matrix.dependencies }})
 
     steps:
       - name: Checkout code
@@ -30,20 +38,15 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           extensions: dom, curl, libxml, mbstring, zip, pcntl, sqlite3, pdo_sqlite, bcmath, fileinfo
-          coverage: xdebug
+          coverage: none
 
+      - name: Install Laravel Framework ${{ matrix.laravel }}
+        run: |
+          composer require "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update
       - name: Install dependencies
         uses: "ramsey/composer-install@v1"
         with:
+          composer-options: "--prefer-dist --no-cache"
           dependency-versions: "${{ matrix.dependencies }}"
-          composer-options: "--prefer-dist"
-
       - name: Execute tests
-        run: vendor/bin/phpunit --coverage-clover build/logs/clover.xml
-
-      - name: Upload coverage results to Coveralls
-        env:
-          COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          composer global require php-coveralls/php-coveralls
-          php-coveralls --coverage_clover=build/logs/clover.xml -v
+        run: vendor/bin/phpunit
