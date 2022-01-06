@@ -69,7 +69,7 @@ class User extends Authenticatable
     /**
      * Get the name of the unique identifier for the user.
      *
-     * @return array
+     * @return array<int, string>
      */
     public function getAuthIdentifiersName()
     {
