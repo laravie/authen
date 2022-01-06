@@ -30,7 +30,7 @@ trait AuthenUser
     /**
      * Get the name of the unique identifier for the user.
      *
-     * @return array
+     * @return array<int, string>
      */
     abstract public function getAuthIdentifiersName(): array;
 }
