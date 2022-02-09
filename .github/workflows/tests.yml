@@ -16,8 +16,8 @@ jobs:
           - "ubuntu-latest"
         php:
           - "8.0"
+          - "8.1"
         dependencies:
-          - "locked"
           - "highest"
           - "lowest"
         laravel:
@@ -61,7 +61,6 @@ jobs:
           - "7.3"
           - "7.4"
         dependencies:
-          - "locked"
           - "highest"
           - "lowest"
         laravel:
