@@ -5,9 +5,12 @@ namespace Laravie\Authen\Tests\Factories;
 use Illuminate\Support\Str;
 use Laravie\Authen\Tests\Fixtures\User;
 
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Laravie\Authen\Tests\Fixtures\User>
+ */
 class UserFactory extends \Orchestra\Testbench\Factories\UserFactory
 {
-        /**
+    /**
      * The name of the factory's corresponding model.
      *
      * @var string
