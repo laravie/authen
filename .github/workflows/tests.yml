@@ -7,7 +7,7 @@ on:
     - cron: '0 0 * * 3'
 
 jobs:
-  tests:
+  tests-on-php8x:
     runs-on: ${{ matrix.os }}
     continue-on-error: ${{ matrix.experimental }}
     strategy:
@@ -50,7 +50,7 @@ jobs:
       - name: Execute tests
         run: vendor/bin/phpunit
 
-  tests-on-php7:
+  tests-on-php7x:
     runs-on: ${{ matrix.os }}
     continue-on-error: ${{ matrix.experimental }}
     strategy:
