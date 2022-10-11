@@ -28,7 +28,12 @@ jobs:
         include:
           - os: ubuntu-latest
             php: "8.2"
-            dependencies: ["highest", "lowest"]
+            dependencies: "highest"
+            laravel: "9.x"
+            experimental: false
+          - os: ubuntu-latest
+            php: "8.2"
+            dependencies: "lowest"
             laravel: "9.x"
             experimental: false
 
