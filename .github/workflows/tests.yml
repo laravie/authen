@@ -15,8 +15,9 @@ jobs:
         os:
           - "ubuntu-latest"
         php:
-          - "8.0"
-          - "8.1"
+          - '8.0'
+          - 8.1
+          - 8.2
         dependencies:
           - "highest"
           - "lowest"
@@ -25,17 +26,6 @@ jobs:
           - "9.x"
         experimental:
           - false
-        include:
-          - os: "ubuntu-latest"
-            php: "8.2"
-            dependencies: "highest"
-            laravel: "9.x"
-            experimental: false
-          - os: "ubuntu-latest"
-            php: "8.2"
-            dependencies: "lowest"
-            laravel: "9.x"
-            experimental: false
 
     name: Laravel ${{ matrix.laravel }} on PHP${{ matrix.php }}-${{ matrix.os }} (${{ matrix.dependencies }})
 
@@ -71,8 +61,8 @@ jobs:
         os:
           - "ubuntu-latest"
         php:
-          - "7.3"
-          - "7.4"
+          - 7.3
+          - 7.4
         dependencies:
           - "highest"
           - "lowest"
