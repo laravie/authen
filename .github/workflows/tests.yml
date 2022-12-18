@@ -7,7 +7,7 @@ on:
     - cron: '0 0 * * 3'
 
 jobs:
-  tests-on-php8x:
+  tests-on-laravel9:
     runs-on: ${{ matrix.os }}
     continue-on-error: ${{ matrix.experimental }}
     strategy:
@@ -22,7 +22,6 @@ jobs:
           - "highest"
           - "lowest"
         laravel:
-          - "8.x"
           - "9.x"
         experimental:
           - false
@@ -53,7 +52,7 @@ jobs:
       - name: Execute tests
         run: vendor/bin/phpunit
 
-  tests-on-php7x:
+  tests-on-laravel8:
     runs-on: ${{ matrix.os }}
     continue-on-error: ${{ matrix.experimental }}
     strategy:
@@ -63,6 +62,8 @@ jobs:
         php:
           - 7.3
           - 7.4
+          - '8.0'
+          - 8.1
         dependencies:
           - "highest"
           - "lowest"
