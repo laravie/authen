@@ -21,7 +21,7 @@
     },
     "require": {
         "php": "^7.3 || ^8.0",
-        "illuminate/auth": "^8.67 || ^9.0"
+        "illuminate/auth": "^8.75 || ^9.0"
     },
     "require-dev": {
         "nunomaduro/larastan": "^1.0.1 || ^2.0",
