@@ -7,6 +7,50 @@ on:
     - cron: '0 0 * * 3'
 
 jobs:
+  tests-on-laravel10:
+    runs-on: ${{ matrix.os }}
+    continue-on-error: ${{ matrix.experimental }}
+    strategy:
+      matrix:
+        os:
+          - "ubuntu-latest"
+        php:
+          - 8.1
+          - 8.2
+        dependencies:
+          - "highest"
+          - "lowest"
+        laravel:
+          - "10.x"
+        experimental:
+          - false
+
+    name: Laravel ${{ matrix.laravel }} on PHP${{ matrix.php }}-${{ matrix.os }} (${{ matrix.dependencies }})
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, sqlite3, pdo_sqlite, bcmath, fileinfo
+          coverage: none
+
+      - name: Install Laravel Framework ${{ matrix.laravel }}
+        run: |
+          composer require "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update
+
+      - name: Install dependencies
+        uses: "ramsey/composer-install@v2"
+        with:
+          composer-options: "--prefer-dist --no-cache"
+          dependency-versions: "${{ matrix.dependencies }}"
+
+      - name: Execute tests
+        run: vendor/bin/phpunit
+
   tests-on-laravel9:
     runs-on: ${{ matrix.os }}
     continue-on-error: ${{ matrix.experimental }}
