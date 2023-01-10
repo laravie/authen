@@ -2,9 +2,9 @@
 
 namespace Laravie\Authen;
 
-use Illuminate\Support\Str;
 use Illuminate\Auth\EloquentUserProvider;
 use Illuminate\Contracts\Auth\Authenticatable as UserContract;
+use Illuminate\Support\Str;
 
 class AuthenUserProvider extends EloquentUserProvider
 {
@@ -12,7 +12,6 @@ class AuthenUserProvider extends EloquentUserProvider
      * Retrieve a user by the given credentials.
      *
      * @param  array<string,string>  $credentials
-     *
      * @return \Illuminate\Contracts\Auth\Authenticatable|null
      */
     public function retrieveByCredentials(array $credentials): ?UserContract
@@ -48,7 +47,6 @@ class AuthenUserProvider extends EloquentUserProvider
      *
      * @param  \Illuminate\Contracts\Auth\Authenticatable  $user
      * @param  array<string,string>  $credentials
-     *
      * @return bool
      */
     public function validateCredentials(UserContract $user, array $credentials): bool

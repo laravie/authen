@@ -2,8 +2,8 @@
 
 namespace Laravie\Authen\Tests\Fixtures;
 
-use Laravie\Authen\AuthenUser;
 use Illuminate\Foundation\Auth\User as Eloquent;
+use Laravie\Authen\AuthenUser;
 
 class User extends Eloquent
 {

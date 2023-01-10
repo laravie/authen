@@ -32,4 +32,4 @@ class UserFactory extends \Orchestra\Testbench\Factories\UserFactory
             'remember_token' => Str::random(10),
         ];
     }
-};
+}

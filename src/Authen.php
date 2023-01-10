@@ -26,7 +26,7 @@ class Authen
     /**
      * Set identifier name.
      *
-     * @param string $identifier
+     * @param  string  $identifier
      *
      * @throws \InvalidArgumentException
      */

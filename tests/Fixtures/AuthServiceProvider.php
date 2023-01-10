@@ -2,8 +2,8 @@
 
 namespace Laravie\Authen\Tests\Fixtures;
 
-use Laravie\Authen\BootAuthenProvider;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Laravie\Authen\BootAuthenProvider;
 
 class AuthServiceProvider extends ServiceProvider
 {
