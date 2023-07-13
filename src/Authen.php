@@ -15,8 +15,6 @@ class Authen
 
     /**
      * Get identifier name.
-     *
-     * @return string
      */
     public static function getIdentifierName(): string
     {
@@ -26,7 +24,6 @@ class Authen
     /**
      * Set identifier name.
      *
-     * @param  string  $identifier
      *
      * @throws \InvalidArgumentException
      */

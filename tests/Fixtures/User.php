@@ -11,8 +11,6 @@ class User extends Eloquent
 
     /**
      * Get the name of the unique identifier for the user.
-     *
-     * @return array
      */
     public function getAuthIdentifiersName(): array
     {

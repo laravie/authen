@@ -9,9 +9,7 @@ trait AuthenUser
     /**
      * Find by identifiers scope.
      *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @param  string|int  $username
-     * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeFindByIdentifiers(Builder $query, $username): Builder
     {

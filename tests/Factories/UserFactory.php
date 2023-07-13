@@ -21,8 +21,6 @@ if (version_compare(Application::VERSION, '10.0', '>=')) {
 
         /**
          * Define the model's default state.
-         *
-         * @return array
          */
         public function definition(): array
         {

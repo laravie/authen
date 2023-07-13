@@ -8,8 +8,6 @@ trait BootAuthenProvider
 {
     /**
      * Register authen user provider.
-     *
-     * @return void
      */
     protected function bootAuthenProvider(): void
     {
