@@ -1,6 +1,5 @@
 providers:
   - Laravie\Authen\AuthenServiceProvider
-  - Workbench\App\Providers\AuthServiceProvider
 
 migrations:
   - workbench/database/migrations
