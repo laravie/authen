@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravie\Authen\Tests\Fixtures;
+namespace Workbench\App\Models;
 
 use Illuminate\Foundation\Auth\User as Eloquent;
 use Laravie\Authen\AuthenUser;

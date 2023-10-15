@@ -1,0 +1,20 @@
+providers:
+  - Laravie\Authen\AuthenServiceProvider
+  - Workbench\App\Providers\AuthServiceProvider
+
+migrations:
+  - workbench/database/migrations
+
+seeders:
+  - Workbench\Database\Seeders\DatabaseSeeder
+
+workbench:
+  start: '/'
+  install: true
+  discovers:
+    web: true
+    api: false
+    commands: false
+  build: []
+  assets: []
+  sync: []

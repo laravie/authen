@@ -2,23 +2,15 @@
 
 namespace Laravie\Authen\Tests;
 
-use Orchestra\Testbench\TestCase as BaseTestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Orchestra\Testbench\Concerns\WithLaravelMigrations;
+use Orchestra\Testbench\Concerns\WithWorkbench;
 
-abstract class TestCase extends BaseTestCase
+abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
-    /**
-     * Get package providers.
-     *
-     * @param  \Illuminate\Foundation\Application  $app
-     * @return array
-     */
-    protected function getPackageProviders($app)
-    {
-        return [
-            \Laravie\Authen\AuthenServiceProvider::class,
-            \Laravie\Authen\Tests\Fixtures\AuthServiceProvider::class,
-        ];
-    }
+    use RefreshDatabase;
+    use WithLaravelMigrations;
+    use WithWorkbench;
 
     /**
      * Define environment setup.
@@ -33,21 +25,8 @@ abstract class TestCase extends BaseTestCase
         $config->set([
             'auth.providers.users' => [
                 'driver' => 'authen',
-                'model' => \Laravie\Authen\Tests\Fixtures\User::class,
+                'model' => \Workbench\App\Models\User::class,
             ],
-        ]);
-    }
-
-    /**
-     * Define database migrations.
-     *
-     * @return void
-     */
-    protected function defineDatabaseMigrations()
-    {
-        $this->loadMigrationsFrom([
-            '--database' => 'testing',
-            '--path' => realpath(__DIR__.'/migrations'),
         ]);
     }
 }
